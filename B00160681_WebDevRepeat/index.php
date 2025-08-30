@@ -35,6 +35,7 @@ if (!in_array($page, $public_pages) && !isset($_SESSION['user_id'])) {
 // send request to right controller
 switch($page) {
     // appointment pages
+    case 'appointments':
         $controller = new AppointmentController($db);
         if(method_exists($controller, $action)) {
             $controller->$action();
